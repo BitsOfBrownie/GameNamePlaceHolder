@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bh4dkct20jvy4"]
+[gd_scene load_steps=6 format=3 uid="uid://bh4dkct20jvy4"]
 
+[ext_resource type="PackedScene" uid="uid://dqsxcsb88rytk" path="res://Ocean.tscn" id="2_2dftf"]
 [ext_resource type="PackedScene" uid="uid://bk4aqja2aloco" path="res://Player.tscn" id="2_bcbcq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rvu7i"]
@@ -25,3 +26,5 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="PrimaryPlayerNode" parent="." instance=ExtResource("2_bcbcq")]
+
+[node name="Untitled" parent="." instance=ExtResource("2_2dftf")]
