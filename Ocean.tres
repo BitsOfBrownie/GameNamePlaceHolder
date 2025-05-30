@@ -1,0 +1,38 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://dof12wja5gtf4"]
+
+[ext_resource type="Shader" uid="uid://b8siudn4jor6f" path="res://Ocean.gdshader" id="1_dwg7x"]
+
+[sub_resource type="Gradient" id="Gradient_sberu"]
+offsets = PackedFloat32Array(0, 0.253571)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_20fyr"]
+frequency = 0.0457
+fractal_type = 3
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 1.7
+domain_warp_enabled = true
+domain_warp_amplitude = 40.395
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mkrdd"]
+seamless = true
+seamless_blend_skirt = 1.0
+bump_strength = 0.0
+color_ramp = SubResource("Gradient_sberu")
+noise = SubResource("FastNoiseLite_20fyr")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dwg7x")
+shader_parameter/albedo = Color(0.0524907, 0.199523, 0.398609, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.1
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_mkrdd")
+shader_parameter/normal_scale = 4.95
+shader_parameter/uv1_scale = Vector3(-1.355, 1.755, 1.355)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
